@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bloom Within Life Coaching | One-to-one coaching for women and young girls</title>
+<meta name="description" content="One-to-one life coaching for women and young girls, worldwide via Zoom. Feel calmer, think clearer and take the first step. WhatsApp GROWTH to book.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#3f1a52; --plum2:#5a2a73; --rose:#c76b8d; --blush:#fbe9ef; --paper:#fdf8fb;
+  --sage:#4f6b3a; --lav:#8c73b8; --gold:#b58a2c; --ink:#2b2233; --muted:#6a5a72;
+  --serif:'Cormorant Garamond',Georgia,serif; --script:'Great Vibes',cursive; --sans:'Nunito Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01s!important}}
+body{margin:0;font-family:var(--sans);font-size:1.06rem;line-height:1.65;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:var(--serif);color:var(--plum);line-height:1.12;margin:0 0 .55em}
+h1{font-size:clamp(2.5rem,6vw,4.4rem);font-weight:700}
+h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:700}
+h3{font-size:1.5rem}
+p{margin:0 0 1em;max-width:60ch}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.4rem}
+section{padding:4.5rem 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;padding:.85rem 1.6rem;border-radius:999px;border:2px solid var(--plum);background:var(--plum);color:#fff;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--plum2)}
+.btn.ghost{background:transparent;color:var(--plum)}
+.btn.ghost:hover{background:var(--blush)}
+.btn.wa{background:#1f9d55;border-color:#1f9d55}
+.btn.wa:hover{background:#188045}
+
+/* header */
+header{position:sticky;top:0;z-index:5;background:rgba(253,248,251,.94);backdrop-filter:blur(6px);border-bottom:1px solid #ecd9e3}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.6rem;color:var(--plum);text-decoration:none;line-height:1}
+.logo span{font-family:var(--script);font-weight:400;color:var(--rose);font-size:1.9rem;margin-left:.15rem}
+nav{display:flex;gap:1.4rem;align-items:center}
+nav a{text-decoration:none;font-weight:600;color:var(--plum)}
+nav a.btn{color:#fff;padding:.5rem 1.1rem;font-size:.95rem}
+@media (max-width:700px){nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:4rem 0 5rem;background:radial-gradient(circle at 80% 30%,var(--blush),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+.hero p.lead{font-size:1.2rem;color:var(--muted)}
+.tag{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--sage);margin-top:1.4rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}}
+
+/* bloom (breathing flower) */
+.bloom{text-align:center}
+.flower{position:relative;width:min(320px,78vw);aspect-ratio:1;margin:0 auto 1rem}
+.petal{position:absolute;left:50%;top:50%;width:24%;height:46%;margin-left:-12%;margin-top:-46%;transform-origin:50% 100%;
+  background:linear-gradient(180deg,var(--rose),#e9a8bf);border-radius:50% 50% 50% 50%/75% 75% 25% 25%;opacity:.85;
+  transform:rotate(var(--r)) scale(var(--s,.5));transition:transform var(--t,1.2s) ease-in-out}
+.flower.open{--s:1}
+.core{position:absolute;inset:36%;border-radius:50%;background:var(--plum);color:#fff;display:grid;place-items:center;text-align:center;font-size:.9rem;font-weight:700;padding:.3rem;z-index:2}
+.bloom-note{font-size:.95rem;color:var(--muted);margin:.8rem auto 0}
+
+/* topics */
+.topics{background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.chip{font:inherit;font-weight:600;padding:.6rem 1.1rem;border-radius:999px;border:2px solid var(--lav);background:#fff;color:var(--plum);cursor:pointer}
+.chip:hover{background:var(--blush)}
+.chip[aria-pressed="true"]{background:var(--plum);border-color:var(--plum);color:#fff}
+.answer{background:var(--blush);border-left:6px solid var(--rose);border-radius:0 16px 16px 0;padding:1.5rem 1.6rem;min-height:9rem}
+.answer h3{margin-bottom:.3rem}
+
+/* who / how */
+.row{display:grid;grid-template-columns:.9fr 1.4fr;gap:1.5rem;padding:1.6rem 0;border-top:2px solid var(--plum)}
+.row:last-child{border-bottom:2px solid var(--plum)}
+.row h3,.row p{margin:0}
+@media (max-width:760px){.row{grid-template-columns:1fr;gap:.4rem}}
+.steps{list-style:none;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;counter-reset:s}
+.steps li{counter-increment:s;border-left:4px solid var(--rose);padding-left:1.2rem}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--rose);display:block;line-height:1}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+
+/* reminder */
+.remind{background:var(--plum);color:#fff;text-align:center}
+.remind h2{color:#fff}
+.remind blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.3;margin:1.2rem auto 1.6rem;max-width:22ch;min-height:5.5em;display:flex;align-items:center;justify-content:center}
+.remind .btn{background:transparent;border-color:#fff}
+.remind .btn:hover{background:rgba(255,255,255,.15)}
+
+/* book */
+.book{text-align:center}
+.book p{margin-inline:auto}
+.num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--plum);margin:.6rem 0 1.4rem}
+.num a{color:inherit;text-decoration:none}
+
+footer{background:var(--paper);border-top:1px solid #ecd9e3;padding:2rem 0 5rem;font-size:.92rem;color:var(--muted);text-align:center}
+footer p{margin-inline:auto}
+
+.float{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:9;background:#1f9d55;color:#fff;font-weight:700;text-decoration:none;padding:.8rem 1.2rem;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.float:hover{background:#188045}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Bloom Within, home">Bloom<span>Within</span></a>
+    <nav aria-label="Main">
+      <a href="#feel">How I can help</a>
+      <a href="#how">How it works</a>
+      <a class="btn wa" data-wa="GROWTH" href="#book">Book on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>You don't have to have it all figured out.</h1>
+      <p class="lead">You just have to take the first step. Bloom Within offers one-to-one life coaching for women and young girls who feel stressed, anxious, overwhelmed or emotionally low, so you can feel better, think clearer and live a more balanced life.</p>
+      <p class="tag">Awaken · Align · Become</p>
+      <div class="cta">
+        <a class="btn wa" data-wa="GROWTH" href="#book">Book an introductory session</a>
+      </div>
+    </div>
+    <div class="bloom" aria-label="Breathing exercise">
+      <div class="flower" id="flower">
+        <div class="core" id="core" aria-live="polite">Tap to breathe</div>
+      </div>
+      <button class="btn ghost" id="breathBtn" type="button">Start a 1-minute breathing reset</button>
+      <p class="bloom-note">Breathe in as the flower opens, out as it closes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="topics" id="feel">
+  <div class="wrap">
+    <h2>What's on your mind today?</h2>
+    <p>Pick what feels closest. You don't have to go through it alone.</p>
+    <div class="chips" id="chips" role="group" aria-label="Topics"></div>
+    <div class="answer" id="answer" aria-live="polite">
+      <h3>Start anywhere</h3>
+      <p>Choose a topic above and I'll share how coaching can help with it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <h2>One-to-one coaching, made for you</h2>
+    <div class="row"><h3>For women and young girls</h3><p>A space to slow down, be heard and work out what you want, whether you're a student finding your feet or a woman balancing everything at once.</p></div>
+    <div class="row"><h3>Worldwide, on Zoom</h3><p>Sessions happen over Zoom, so you can join from home, wherever in the world you are.</p></div>
+    <div class="row"><h3>Flexible slots</h3><p>Times that work around study, work and family life.</p></div>
+    <div class="row"><h3>Safe and confidential</h3><p>What you share stays between us. This is a judgment-free space.</p></div>
+  </div>
+</section>
+
+<section id="how" style="background:#fff">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><h3>Message me</h3><p>Send “GROWTH” on WhatsApp to get started.</p></li>
+      <li><h3>Introductory session</h3><p>We meet on Zoom, talk about where you are and where you want to be.</p></li>
+      <li><h3>Grow at your pace</h3><p>We set simple goals and habits and work on them together, step by step.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="remind">
+  <div class="wrap">
+    <h2>A reminder for today</h2>
+    <blockquote id="quote" aria-live="polite">Together, we will unlock your potential.</blockquote>
+    <button class="btn" id="nextQuote" type="button">Show me another</button>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <h2>Ready to take the first step?</h2>
+    <p>Send “GROWTH” on WhatsApp and we'll find a time for your introductory session.</p>
+    <div class="num"><a href="tel:+918248398194">8248398194</a></div>
+    <a class="btn wa" data-wa="GROWTH" href="#book">Chat on WhatsApp</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="yr">2026</span> Bloom Within Life Coaching. Coaching supports personal growth and is not a substitute for therapy or medical care. If you are in crisis or feel unsafe, please contact a doctor or your local emergency services.</p>
+  </div>
+</footer>
+
+<a class="float" data-wa="GROWTH" href="#book" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<script>
+const PHONE = "918248398194"; // country code 91 + number
+const wa = t => "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = wa(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* Breathing flower */
+const flower = document.getElementById("flower"), core = document.getElementById("core"), btn = document.getElementById("breathBtn");
+for (let i = 0; i < 8; i++) { const p = document.createElement("div"); p.className = "petal"; p.style.setProperty("--r", i * 45 + "deg"); flower.insertBefore(p, core); }
+let timers = [], running = false;
+const clear = () => { timers.forEach(clearTimeout); timers = []; };
+function phase(text, open, secs, next) {
+  core.textContent = text;
+  flower.style.setProperty("--t", secs + "s");
+  flower.classList.toggle("open", open);
+  timers.push(setTimeout(next, secs * 1000));
+}
+function run(round) {
+  if (!running) return;
+  if (round > 4) return stop("Well done. How do you feel?");
+  phase("Breathe in", true, 4, () => phase("Hold", true, 2, () => phase("Breathe out", false, 6, () => run(round + 1))));
+}
+function stop(msg) {
+  running = false; clear();
+  flower.style.setProperty("--t", "1.2s"); flower.classList.remove("open");
+  core.textContent = msg || "Tap to breathe"; btn.textContent = "Start a 1-minute breathing reset";
+}
+btn.onclick = () => { if (running) return stop(); running = true; btn.textContent = "Stop"; run(1); };
+core.onclick = () => btn.click();
+
+/* Topics */
+const topics = [
+  ["Stress & emotional balance", "When everything feels like too much, we slow things down. Together we find calming habits and ways to respond instead of react."],
+  ["Overthinking & anxiety-related worries", "We look at the thoughts going round in circles and learn simple tools to quiet them and focus on what you can act on."],
+  ["Low confidence & self-belief", "We rebuild trust in yourself by noticing your strengths and taking small, brave steps that prove you can."],
+  ["Low motivation & energy", "We find out what's draining you, what lights you up, and build routines that bring your energy back."],
+  ["Personal growth & clarity", "If you feel stuck or unsure of your direction, we get clear on your values and what you truly want next."],
+  ["Relationships & communication", "We practise saying what you need with confidence and kindness, with family, friends and at work or school."],
+  ["Goal setting & positive habits", "We turn big wishes into simple weekly steps and habits you can keep, and celebrate each win."]
+];
+const chips = document.getElementById("chips"), ans = document.getElementById("answer");
+topics.forEach(([name, msg]) => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.type = "button"; b.textContent = name; b.setAttribute("aria-pressed", "false");
+  b.onclick = () => {
+    chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false"));
+    b.setAttribute("aria-pressed", "true");
+    ans.innerHTML = "";
+    const h = document.createElement("h3"); h.textContent = name;
+    const p = document.createElement("p"); p.textContent = msg;
+    const a = document.createElement("a"); a.className = "btn wa"; a.target = "_blank"; a.rel = "noopener";
+    a.href = wa("GROWTH - Hi, I'd like to talk about: " + name); a.textContent = "Talk to me about this";
+    ans.append(h, p, a);
+  };
+  chips.appendChild(b);
+});
+
+/* Reminders */
+const quotes = [
+  "You just have to take the first step.",
+  "Together, we will unlock your potential.",
+  "You are allowed to grow at your own pace.",
+  "Small steps still move you forward.",
+  "You don't have to go through it alone.",
+  "What you feel is valid, and it can change."
+];
+let qi = 0; const q = document.getElementById("quote");
+document.getElementById("nextQuote").onclick = () => { qi = (qi + 1) % quotes.length; q.textContent = quotes[qi]; };
+</script>
+</body>
+</html>
